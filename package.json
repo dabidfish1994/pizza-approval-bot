@@ -1,16 +1,21 @@
 {
   "name": "pizza-approval-bot",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
+  "bin": {
+    "pizza": "dist/cli.js"
+  },
   "scripts": {
-    "dev": "tsx src/index.ts",
-    "start": "node dist/index.js",
-    "build": "tsc"
+    "pizza": "tsx src/cli.ts",
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
   },
   "dependencies": {
-    "dotenv": "^16.4.7",
-    "playwright": "^1.55.0"
+    "dominos": "^3.3.1",
+    "dotenv": "^16.4.7"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
